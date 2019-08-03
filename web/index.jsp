@@ -9,27 +9,27 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta http-equiv="refresh" content="2">
         <link href="css/basic.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu|Oxygen|Lobster&display=swap" rel="stylesheet">
         <title>Home</title>
     </head>
-    <body id="index_body" class="w3-oxygen">
-        <header class=w3-flat-turquoise">
-            <section class="w3-flat-turquoise w3-mobile">
-                <span class="w3-lobster w3-xxlarge w3-margin-left w3-mobile">Take a Quiz!</span>
-            </section>            
-            <section class="w3-bar w3-right w3-border w3-large w3-flat-turquoise w3-opacity w3-mobile">
-                <a href="register" class="w3-bar-item w3-right w3-hover-amber w3-mobile">Register</a>
-                <a href="login" class="w3-bar-item w3-right w3-hover-amber w3-mobile">Login</a>
-            </section>
+    <body class="w3-oxygen">
+        <header class="w3-container w3-bar w3-border w3-white">
+                <span class="w3-mobile w3-lobster w3-xxlarge w3-margin-left w3-hover-text-amber" style="color: #767676">Take a Quiz!</span>
+                <a href="Aboutus" class="w3-mobile w3-bar-item w3-padding-16 w3-right w3-amber w3-hover-text-white">About Us</a>
+                <a href="Register" class="w3-mobile w3-bar-item w3-padding-16 w3-right w3-hover-text-amber">Register</a>
+                <a href="Login" class="w3-mobile w3-bar-item w3-padding-16 w3-right w3-hover-text-amber">Login</a>
         </header>
         
-        <section id="content">
-            <a href="quiz">Take a Quiz, test your Knowledge</a>
+        <section id="content" class="w3-mobile w3-container w3-display-middle">
+            <img src="images/brain-bulb.png" class="w3-mobile w3-margin" alt="" height="365px" width="300px"/>
+            <a href="Quiz" class="w3-mobile w3-padding w3-border w3-border-amber w3-hover-text-amber w3-center w3-block">Take a Quiz, test your Knowledge</a>
         </section>
         
+        <footer class="w3-mobile w3-container w3-bottom w3-center w3-border w3-light-grey">
+            Copyright &copy; Sushant More (moresushant48)
+        </footer>
     </body>
 </html>

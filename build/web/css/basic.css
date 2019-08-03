@@ -9,7 +9,8 @@ and open the template in the editor.
 */
 
 body {
-    background-color : ghostwhite;
+    background-color : white;
+    height: 100vh;
 }
 
 #index_body {
@@ -25,5 +26,5 @@ a {
 }
 
 .w3-lobster {
-	font-family: 'Lobster', sans-serif;
+    font-family: 'Lobster', sans-serif;
 }
