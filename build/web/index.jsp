@@ -14,7 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Ubuntu|Oxygen|Lobster&display=swap" rel="stylesheet">
         <title>Home</title>
     </head>
-    <body class="w3-oxygen">
+    <body>
         <header class="w3-container w3-bar w3-border w3-white">
                 <span class="w3-mobile w3-lobster w3-xxlarge w3-margin-left w3-hover-text-amber" style="color: #767676">Take a Quiz!</span>
                 <a href="Aboutus" class="w3-mobile w3-bar-item w3-padding-16 w3-right w3-amber w3-hover-text-white">About Us</a>
