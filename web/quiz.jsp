@@ -7,10 +7,6 @@
     Author     : moresushant48
 --%>
 
-<%@page import="io.moresushant48.repo.QuizPageRepo"%>
-<%@page import="io.moresushant48.DBManager"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="java.sql.ResultSet"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -30,16 +26,16 @@
                 <a href="Login" class="w3-mobile w3-bar-item w3-padding-16 w3-right w3-hover-text-amber">Login</a>
         </header>
         
-        <section id="content" class="w3-mobile w3-container w3-display-middle">
-            <table border="1">
+        <section id="content" class="w3-mobile w3-container w3-auto w3-margin-top">
+            <table class="w3-table w3-bordered w3-striped w3-large">
                 <c:forEach items="${questions}" var="que">
                     <tr>
                         <td><c:out value="${que.id}"/></td>
                         <td><c:out value="${que.question}"/></td>
-                        <td><c:out value="${que.sol1}"/></td>
-                        <td><c:out value="${que.sol2}"/></td>
-                        <td><c:out value="${que.sol3}"/></td>
-                        <td><c:out value="${que.sol4}"/></td>
+                        <td><input type="radio" name="${que.id}" value="${que.sol1}"><c:out value="${que.sol1}"/></td>
+                        <td><input type="radio" name="${que.id}" value="${que.sol2}"><c:out value="${que.sol2}"/></td>
+                        <td><input type="radio" name="${que.id}" value="${que.sol3}"><c:out value="${que.sol3}"/></td>
+                        <td><input type="radio" name="${que.id}" value="${que.sol4}"><c:out value="${que.sol4}"/></td>
                     </tr>
                 </c:forEach>
             </table>

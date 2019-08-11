@@ -9,16 +9,8 @@ import io.moresushant48.DBManager;
 import io.moresushant48.Model.Questions;
 import io.moresushant48.repo.QuizPageRepo;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -37,25 +29,7 @@ public class QuizPage extends HttpServlet {
         
         Connection c = DBManager.getCon();
         QuizPageRepo repo = new QuizPageRepo();
-        ResultSet rs = repo.getQuestions(c);
-        
-        ArrayList<Questions> arr = new ArrayList<Questions>();
-        
-        try {
-            while(rs.next()){
-                Questions q = new Questions();
-                q.setId(rs.getString("id"));
-                q.setQuestion(rs.getString("question"));
-                q.setSol1(rs.getString("sol1"));
-                q.setSol2(rs.getString("sol2"));
-                q.setSol3(rs.getString("sol3"));
-                q.setSol4(rs.getString("sol4"));
-                arr.add(q);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(QuizPage.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+        ArrayList<Questions> arr = repo.getQuestions(c);        
         req.setAttribute("questions", arr);
         
         rd.include(req, resp);
