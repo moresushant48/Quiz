@@ -23,15 +23,22 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class QuizPage extends HttpServlet {
 
+    private Connection c = DBManager.getCon();
+    private QuizPageRepo repo = new QuizPageRepo();
+    private ArrayList<Questions> arr = repo.getQuestions(c);
+    
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, NullPointerException {
         RequestDispatcher rd = req.getRequestDispatcher("quiz.jsp");
-        
-        Connection c = DBManager.getCon();
-        QuizPageRepo repo = new QuizPageRepo();
-        ArrayList<Questions> arr = repo.getQuestions(c);        
         req.setAttribute("questions", arr);
-        
-        rd.include(req, resp);
+        rd.forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        RequestDispatcher rd = req.getRequestDispatcher("quiz.jsp");
+        req.setAttribute("questions", arr);
+        req.setAttribute("result", repo.calcResultOfQuiz(req));
+        rd.forward(req, resp);
     }
 }

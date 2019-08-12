@@ -17,6 +17,7 @@ public class Questions {
     String sol2;
     String sol3;
     String sol4;
+    String answer;
 
     public String getId() {
         return id;
@@ -65,5 +66,12 @@ public class Questions {
     public void setSol4(String sol4) {
         this.sol4 = sol4;
     }
-    
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }    
 }

@@ -27,18 +27,37 @@
         </header>
         
         <section id="content" class="w3-mobile w3-container w3-auto w3-margin-top">
-            <table class="w3-table w3-bordered w3-striped w3-large">
-                <c:forEach items="${questions}" var="que">
-                    <tr>
-                        <td><c:out value="${que.id}"/></td>
-                        <td><c:out value="${que.question}"/></td>
-                        <td><input type="radio" name="${que.id}" value="${que.sol1}"><c:out value="${que.sol1}"/></td>
-                        <td><input type="radio" name="${que.id}" value="${que.sol2}"><c:out value="${que.sol2}"/></td>
-                        <td><input type="radio" name="${que.id}" value="${que.sol3}"><c:out value="${que.sol3}"/></td>
-                        <td><input type="radio" name="${que.id}" value="${que.sol4}"><c:out value="${que.sol4}"/></td>
-                    </tr>
-                </c:forEach>
-            </table>
+            <form action="QuizPage" method="post" class="w3-mobile w3-container w3-margin-bottom">
+                <table class="w3-mobile w3-table w3-bordered w3-striped w3-large">
+                    <c:forEach items="${questions}" var="que">
+                        <tr>
+                            <td><c:out value="${que.id}"/></td>
+                            <td><c:out value="${que.question}"/><br>
+                                <input type="radio" name="${que.id}" value="${que.sol1}"><c:out value=" ${que.sol1}"/><br>
+                                <input type="radio" name="${que.id}" value="${que.sol2}"><c:out value=" ${que.sol2}"/><br>
+                                <input type="radio" name="${que.id}" value="${que.sol3}"><c:out value=" ${que.sol3}"/><br>
+                                <input type="radio" name="${que.id}" value="${que.sol4}"><c:out value=" ${que.sol4}"/>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                        <tr>
+                            <td colspan="2">
+                                <c:if test="${result != null}">                             
+                                    <div class="w3-green w3-text-white w3-container w3-center">
+                                        <p>Your score is <c:out value="${result}" />/5.</p>
+                                    </div>
+                                </c:if>
+                            </td>
+                        </tr>
+                        <tr>                            
+                            <td class="w3-center" colspan="2">
+                                <input type="submit" class="w3-mobile w3-button w3-hover-amber">
+                                <input type="reset" class="w3-mobile w3-button w3-hover-amber">
+                            </td>
+                        </tr>
+                </table>                
+            </form>
         </section>
+        
     </body>
 </html>
